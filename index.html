@@ -178,13 +178,10 @@
 <p><img src="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613143521680-1203492491.png" alt="img"></p>
 <h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password</span><br></pre></td></tr></table></figure>
 
-<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>更改加密规则：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p  #登录数据库</span><br><span class="line"></span><br><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39; PASSWORD EXPIRE NEVER; #更改加密方式</span><br><span class="line"></span><br><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;password&#39;; #更新用户密码</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES; #刷新权限</span><br></pre></td></tr></table></figure>
-
-<p>再重新连接即可。</p>
-<p><img src="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613144523421-288936970.png" alt="img"></p>
-<p><img src="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613144915809-282360990.png" alt="img"></p>
-
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4>
+        
+          <a class="article-more-a" href="/2019/11/14/Navicat%E8%BF%9E%E6%8E%A5MySQL%E6%8A%A5%E9%94%992059%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/#more">more >></a>
+        
       
 
       
@@ -266,24 +263,9 @@
         <h4 id="splinter易班抢讲座脚本使用说明"><a href="#splinter易班抢讲座脚本使用说明" class="headerlink" title="splinter易班抢讲座脚本使用说明"></a>splinter易班抢讲座脚本使用说明</h4><h6 id="1-安装python"><a href="#1-安装python" class="headerlink" title="1. 安装python"></a>1. 安装python</h6><p>​    请自行百度教程进行安装，并添加系统环境变量</p>
 <h6 id="2-装谷歌浏览器"><a href="#2-装谷歌浏览器" class="headerlink" title="2. 装谷歌浏览器"></a>2. 装谷歌浏览器</h6><p>​    （默认火狐，我用的谷歌）</p>
 <p>​    百度搜chrome，下载安装</p>
-<h6 id="3-装谷歌浏览器驱动"><a href="#3-装谷歌浏览器驱动" class="headerlink" title="3. 装谷歌浏览器驱动"></a>3. 装谷歌浏览器驱动</h6><p>​    3.1下载驱动文件chromedriver</p>
-<p>​    3.2将驱动文件复制到谷歌浏览器的安装目录下</p>
-<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571060299376.png" alt="1571060299376"></p>
-<p>​    3.3将谷歌浏览器安装目录添加到系统环境变量中</p>
-<p>​        <img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571920456899.png" alt="1571920456899"></p>
-<img src="C:\Users\lzfdd\AppData\Roaming\Typora\typora-user-images\1571920481680.png" alt="1571920481680" style="zoom:200%;" />
-
-
-
-<h6 id="5-安装splinter模块"><a href="#5-安装splinter模块" class="headerlink" title="5. 安装splinter模块"></a>5. 安装splinter模块</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install splinter</span><br></pre></td></tr></table></figure>
-
-<p>如安装失败请加镜像 <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-<h6 id="6-运行脚本文件"><a href="#6-运行脚本文件" class="headerlink" title="6. 运行脚本文件"></a>6. 运行脚本文件</h6><p>讲座开始前直接双击脚本文件运行</p>
-<h6 id="7-注意事项"><a href="#7-注意事项" class="headerlink" title="7. 注意事项"></a>7. 注意事项</h6><p>1.每次讲座脚本修改下面三个位置，报名链接和时间</p>
-<p>2.验证码需要手动输入，所以至少要提前一分钟运行脚本登录易班</p>
-<p>3.运行脚本时浏览器窗口和命令窗口不要最小化</p>
-<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571986721699.png" alt="1571986721699"></p>
-
+        
+          <a class="article-more-a" href="/2019/10/23/%E5%9F%BA%E4%BA%8EPython%E4%B8%8BSplinter%E7%9A%84%E6%98%93%E7%8F%AD%E8%87%AA%E5%8A%A8%E6%8A%A2%E8%AE%B2%E5%BA%A7%E8%84%9A%E6%9C%AC/#more">more >></a>
+        
       
 
       
@@ -366,43 +348,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">thisAtc = Article.objects.all().order_by(<span class="string">'-created_time'</span>)</span><br><span class="line">		ccccuser = User.objects.get(username=<span class="string">'张三'</span>)</span><br><span class="line">		article = ccccuser.article_set.all()</span><br><span class="line">		print(article)</span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> article:</span><br><span class="line">			print(i.author)</span><br></pre></td></tr></table></figure>
 
 <p>在之前django的学习中，我们一直使用的是这种方式。</p>
-<h1 id="CBV"><a href="#CBV" class="headerlink" title="CBV"></a>CBV</h1><p><strong>CBV（class base views）</strong> 就是在视图里使用类处理请求。</p>
-<p>Python是一个面向对象的编程语言，如果只用函数来开发，有很多面向对象的优点就错失了（继承、封装、多态）。所以Django在后来加入了Class-Based-View。可以让我们用类写View。这样做的优点主要下面两种：</p>
-<ol>
-<li>提高了代码的复用性，可以使用面向对象的技术，比如Mixin（多继承）</li>
-<li>可以用不同的函数针对不同的HTTP方法处理，而不是通过很多if判断，提高代码可读性</li>
-</ol>
-<h2 id="使用class-based-views"><a href="#使用class-based-views" class="headerlink" title="使用class-based views"></a><strong>使用class-based views</strong></h2><p>如果我们要写一个处理GET方法的view，用函数写的话是下面这样。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_view</span><span class="params">(request)</span>:</span></span><br><span class="line">     <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">'OK'</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>如果用class-based view写的话，就是下面这样</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyView</span><span class="params">(View)</span>:</span></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">'OK'</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Django的url是将一个请求分配给可调用的函数的，而不是一个class。针对这个问题，class-based view提供了一个<code>as_view()</code>静态方法（也就是类方法），调用这个方法，会创建一个类的实例，然后通过实例调用<code>dispatch()</code>方法，<code>dispatch()</code>方法会根据request的method的不同调用相应的方法来处理request（如<code>get()</code>,<code>post()</code>等）。到这里，这些方法和function-based view差不多了，要接收request，得到一个response返回。如果方法没有定义，会抛出HttpResponseNotAllowed异常。</p>
-<p>在url中，就这么写：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urls.py</span></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> myapp.views <span class="keyword">import</span> MyView</span><br><span class="line">  </span><br><span class="line">urlpatterns = [</span><br><span class="line">     url(<span class="string">r'^index/$'</span>, MyView.as_view()),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-
-
-<p>类的属性可以通过两种方法设置，第一种是常见的Python的方法，可以被子类覆盖。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GreetingView</span><span class="params">(View)</span>:</span></span><br><span class="line">    name = <span class="string">"yuan"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">         <span class="keyword">return</span> HttpResponse(self.name)</span><br><span class="line">  </span><br><span class="line"><span class="comment"># You can override that in a subclass</span></span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MorningGreetingView</span><span class="params">(GreetingView)</span>:</span></span><br><span class="line">    name= <span class="string">"alex"</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>第二种方法，你也可以在url中指定类的属性：</p>
-<p>在url中设置类的属性Python</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">   url(<span class="string">r'^index/$'</span>, GreetingView.as_view(name=<span class="string">"egon"</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用Mixin"><a href="#使用Mixin" class="headerlink" title="使用Mixin"></a><strong>使用Mixin</strong></h2><p>我觉得要理解django的class-based-view（以下简称cbv），首先要明白django引入cbv的目的是什么。在django1.3之前，generic   view也就是所谓的通用视图，使用的是function-based-view（fbv），亦即基于函数的视图。有人认为fbv比cbv更pythonic，窃以为不然。</p>
-<p>python的一大重要的特性就是面向对象。而cbv更能体现python的面向对象。</p>
-<p>cbv是通过class的方式来实现视图方法的。class相对于function，更能利用多态的特定，因此更容易从宏观层面上将项目内的比较通用的功能抽象出来。关于多态，可以理解为一个东西具有多种形态（的特性）。cbv的实现原理通过看django的源码就很容易明白，大体就是由url路由到这个cbv之后，通过cbv内部的dispatch方法进行分发，将get请求分发给cbv.get方法处理，将post请求分发给cbv.post方法处理，其他方法类似。</p>
-<p>怎么利用多态呢？cbv里引入了mixin的概念。Mixin就是写好了的一些基础类，然后通过不同的Mixin组合成为最终想要的类。</p>
-<p>所以，理解cbv的基础是，理解Mixin。Django中使用Mixin来重用代码，一个View Class可以继承多个Mixin，但是只能继承一个View（包括View的子类），推荐把View写在最右边，多个Mixin写在左边。</p>
-
+        
+          <a class="article-more-a" href="/2019/10/14/Django%E7%9A%84CBV%E5%92%8CFBV%E5%AD%A6%E4%B9%A0/#more">more >></a>
+        
       
 
       
