@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://leechiufung.coding.me">
   <title>Navicat连接MySQL报错2059问题记录 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用Navicat Premium 连接MySQL时出现如下错误：   原因1mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password">
+  <meta name="description" content="使用Navicat Premium 连接MySQL时出现如下错误：   原因 mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Navicat连接MySQL报错2059问题记录">
 <meta property="og:url" content="http://leechiufung.coding.me/2019/11/14/Navicat%E8%BF%9E%E6%8E%A5MySQL%E6%8A%A5%E9%94%992059%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="我不安生">
-<meta property="og:description" content="使用Navicat Premium 连接MySQL时出现如下错误：   原因1mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password">
+<meta property="og:description" content="使用Navicat Premium 连接MySQL时出现如下错误：   原因 mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613143521680-1203492491.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613144523421-288936970.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613144915809-282360990.png">
 <meta property="article:published_time" content="2019-11-14T06:50:53.000Z">
-<meta property="article:modified_time" content="2020-02-15T05:13:19.184Z">
+<meta property="article:modified_time" content="2020-02-15T05:32:38.031Z">
 <meta property="article:author" content="我不安生">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="MySQL">
@@ -186,8 +186,9 @@
 使用Navicat Premium 连接MySQL时出现如下错误：
 
 <p><img src="https://images2018.cnblogs.com/blog/1365724/201806/1365724-20180613143521680-1203492491.png" alt="img"></p>
-<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password</span><br></pre></td></tr></table></figure>
-
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><blockquote>
+<p>mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password</p>
+</blockquote>
 <a id="more"></a>
 
 <h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>更改加密规则：</p>
