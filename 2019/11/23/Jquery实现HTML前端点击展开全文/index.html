@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://leechiufung.coding.me">
-  <title>Archives | 我不安生</title>
+  <title>Jquery实现HTML前端点击展开全文 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我不安生">
-<meta property="og:url" content="http://leechiufung.coding.me/archives/index.html">
+  <meta name="description" content="最近在做动态分享功能，发现微博的样式挺不错的，于是仿微博做了一个。先上效果图：   实现思路是，设定固定的高度（我这里是300），读取数据库信息对每一项内容循环判断高度是否超出，如果超出则显示展开全文并且超出部分隐藏。下面是具体的实现。 12345678910111213&lt;!-- HTML结构 --&gt;&lt;div class&#x3D;&quot;ri_detail&quot;&gt;    &lt;div cl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jquery实现HTML前端点击展开全文">
+<meta property="og:url" content="http://leechiufung.coding.me/2019/11/23/Jquery%E5%AE%9E%E7%8E%B0HTML%E5%89%8D%E7%AB%AF%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87/index.html">
 <meta property="og:site_name" content="我不安生">
+<meta property="og:description" content="最近在做动态分享功能，发现微博的样式挺不错的，于是仿微博做了一个。先上效果图：   实现思路是，设定固定的高度（我这里是300），读取数据库信息对每一项内容循环判断高度是否超出，如果超出则显示展开全文并且超出部分隐藏。下面是具体的实现。 12345678910111213&lt;!-- HTML结构 --&gt;&lt;div class&#x3D;&quot;ri_detail&quot;&gt;    &lt;div cl">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87.jpg">
+<meta property="og:image" content="http://q5u20aot3.bkt.clouddn.com/%E6%94%B6%E8%B5%B7%E5%85%A8%E6%96%87.jpg">
+<meta property="article:published_time" content="2019-11-23T07:48:38.000Z">
+<meta property="article:modified_time" content="2020-02-17T08:17:25.612Z">
 <meta property="article:author" content="我不安生">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87.jpg">
   
     <link rel="alternative" href="/atom.xml" title="我不安生" type="application/atom+xml">
   
@@ -158,37 +165,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Jquery实现HTML前端点击展开全文" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/23/Jquery%E5%AE%9E%E7%8E%B0HTML%E5%89%8D%E7%AB%AF%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87/" class="archive-article-date">
-  	<time datetime="2019-11-23T07:48:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/23/Jquery%E5%AE%9E%E7%8E%B0HTML%E5%89%8D%E7%AB%AF%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87/">Jquery实现HTML前端点击展开全文</a>
+    <h1 class="article-title" itemprop="name">
+      Jquery实现HTML前端点击展开全文
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/11/23/Jquery%E5%AE%9E%E7%8E%B0HTML%E5%89%8D%E7%AB%AF%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87/" class="archive-article-date">
+  	<time datetime="2019-11-23T07:48:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在做动态分享功能，发现微博的样式挺不错的，于是仿微博做了一个。先上效果图：</p>
+<p><img src="http://q5u20aot3.bkt.clouddn.com/%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87.jpg" alt=""></p>
+<p><img src="http://q5u20aot3.bkt.clouddn.com/%E6%94%B6%E8%B5%B7%E5%85%A8%E6%96%87.jpg" alt=""></p>
+<p>实现思路是，设定固定的高度（我这里是300），读取数据库信息对每一项内容循环判断高度是否超出，如果超出则显示展开全文并且超出部分隐藏。下面是具体的实现。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ri_detail"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"rz_title"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"rz_name"</span>&gt;</span>&#123;&#123; atc.author.username &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"rz_time"</span>&gt;</span>&#123;&#123; atc.created_time|timesince_zh &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content-body"</span>&gt;</span></span><br><span class="line">        &#123;% autoescape off %&#125;</span><br><span class="line">        &#123;&#123; atc.content &#125;&#125;</span><br><span class="line">        &#123;% endautoescape %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"zhankai"</span>&gt;</span>...<span class="symbol">&amp;nbsp;</span>展开全文<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS样式 */</span></span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-class">.zhankai</span>&#123;</span><br><span class="line">		<span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">20px</span>;</span><br><span class="line">		<span class="attribute">color</span>: red;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.zhankai</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">		<span class="attribute">cursor</span>: pointer;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="selector-class">.content-body</span>&#123;</span><br><span class="line">		<span class="attribute">overflow</span>: hidden;</span><br><span class="line">		<span class="attribute">white-space</span>: nowrap;</span><br><span class="line">		<span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//script实现</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="comment">//遍历每个.content-body，如果高度小于300则隐藏按钮“展开全文/收起全文”；否则设置高度为300px。</span></span><br><span class="line">	$(<span class="string">'.content-body'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>($(<span class="keyword">this</span>).height()&lt;<span class="number">300</span>)&#123;</span><br><span class="line">			$(<span class="keyword">this</span>).parent().children(<span class="string">'.zhankai'</span>).hide();</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			$(<span class="keyword">this</span>).css(<span class="string">"height"</span>,<span class="string">"300px"</span>);</span><br><span class="line">			$(<span class="keyword">this</span>).parent().children(<span class="string">'.zhankai'</span>).show();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	$(<span class="string">'.zhankai'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> htm = $(<span class="keyword">this</span>).html();		<span class="comment">//点击按钮时获取按钮文本，判断当前是点击前还是后的状态</span></span><br><span class="line">		<span class="keyword">if</span> (htm == <span class="string">"...&amp;nbsp;展开全文"</span>) &#123;</span><br><span class="line">			$(<span class="keyword">this</span>).html(<span class="string">'收起全文'</span>);</span><br><span class="line">			$(<span class="keyword">this</span>).parent().children(<span class="string">'.content-body'</span>).css(<span class="string">'height'</span>, <span class="string">'auto'</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			$(<span class="keyword">this</span>).html(<span class="string">'...&amp;nbsp;展开全文'</span>);</span><br><span class="line">			$(<span class="keyword">this</span>).parent().children(<span class="string">'.content-body'</span>).css(<span class="string">'height'</span>, <span class="string">'300px'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -205,266 +220,85 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/14/Navicat%E8%BF%9E%E6%8E%A5MySQL%E6%8A%A5%E9%94%992059%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-11-14T06:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/14/Navicat%E8%BF%9E%E6%8E%A5MySQL%E6%8A%A5%E9%94%992059%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">Navicat连接MySQL报错2059问题记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/MySQL//" class="article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/23/%E5%9F%BA%E4%BA%8EPython%E4%B8%8BSplinter%E7%9A%84%E6%98%93%E7%8F%AD%E8%87%AA%E5%8A%A8%E6%8A%A2%E8%AE%B2%E5%BA%A7%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-  	<time datetime="2019-10-23T07:06:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/23/%E5%9F%BA%E4%BA%8EPython%E4%B8%8BSplinter%E7%9A%84%E6%98%93%E7%8F%AD%E8%87%AA%E5%8A%A8%E6%8A%A2%E8%AE%B2%E5%BA%A7%E8%84%9A%E6%9C%AC/">基于Python下Splinter的易班自动抢讲座脚本</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/14/Django%E7%9A%84CBV%E5%92%8CFBV%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2019-10-14T07:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/14/Django%E7%9A%84CBV%E5%92%8CFBV%E5%AD%A6%E4%B9%A0/">Django的CBV和FBV学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/21/%E8%94%A1%E5%BA%B7%E6%B0%B8%E7%9A%84%E6%83%85%E5%95%86%E8%AF%BE/" class="archive-article-date">
-  	<time datetime="2019-07-21T02:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/21/%E8%94%A1%E5%BA%B7%E6%B0%B8%E7%9A%84%E6%83%85%E5%95%86%E8%AF%BE/">蔡康永的情商课</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/" class="archive-article-date">
-  	<time datetime="2018-04-22T15:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/">游记-德天跨国瀑布之行</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">游记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/11/14/Navicat%E8%BF%9E%E6%8E%A5MySQL%E6%8A%A5%E9%94%992059%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Navicat连接MySQL报错2059问题记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+
+
+  
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "AEXDLJKVaHAtWRlTr6XGfugs-gzGzoHsz",
+            app_key: "2LhKRakRVNGdlrF7IGQKGX6v",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
+</script>
+    </section>
+  
+
+
+  
+
+
 
 
           </div>
@@ -490,8 +324,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
