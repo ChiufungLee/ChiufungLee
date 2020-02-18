@@ -8,23 +8,26 @@
   <link rel="dns-prefetch" href="http://leechiufung.coding.me">
   <title>基于Python下Splinter的易班自动抢讲座脚本 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="splinter易班抢讲座脚本使用说明1. 安装python​    请自行百度教程进行安装，并添加系统环境变量 2. 装谷歌浏览器​    （默认火狐，我用的谷歌） ​    百度搜chrome，下载安装">
+  <meta name="description" content="最近发现身边的朋友一直被易班抢讲座所困扰着，每次抢讲座总有一波1s内就填完一大堆信息的“大神”，于是突发奇想想自己写一个自动抢讲座的脚本。最后测试成功了，现在记录一下。 先来看一下最终的效果：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Python下Splinter的易班自动抢讲座脚本">
 <meta property="og:url" content="http://leechiufung.coding.me/2019/10/23/%E5%9F%BA%E4%BA%8EPython%E4%B8%8BSplinter%E7%9A%84%E6%98%93%E7%8F%AD%E8%87%AA%E5%8A%A8%E6%8A%A2%E8%AE%B2%E5%BA%A7%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="我不安生">
-<meta property="og:description" content="splinter易班抢讲座脚本使用说明1. 安装python​    请自行百度教程进行安装，并添加系统环境变量 2. 装谷歌浏览器​    （默认火狐，我用的谷歌） ​    百度搜chrome，下载安装">
+<meta property="og:description" content="最近发现身边的朋友一直被易班抢讲座所困扰着，每次抢讲座总有一波1s内就填完一大堆信息的“大神”，于是突发奇想想自己写一个自动抢讲座的脚本。最后测试成功了，现在记录一下。 先来看一下最终的效果：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/BlogPictures/ybPage.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/BlogPictures/picShell.jpg">
+<meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582014385583.png">
 <meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571060299376.png">
 <meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571920456899.png">
 <meta property="og:image" content="c:/Users/lzfdd/AppData/Roaming/Typora/typora-user-images/1571920481680.png">
+<meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582015384626.png">
 <meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571986721699.png">
 <meta property="article:published_time" content="2019-10-23T07:06:50.000Z">
-<meta property="article:modified_time" content="2020-02-15T07:54:00.563Z">
+<meta property="article:modified_time" content="2020-02-18T10:22:55.450Z">
 <meta property="article:author" content="我不安生">
-<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571060299376.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/BlogPictures/ybPage.jpg">
   
     <link rel="alternative" href="/atom.xml" title="我不安生" type="application/atom+xml">
   
@@ -188,28 +191,75 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="splinter易班抢讲座脚本使用说明"><a href="#splinter易班抢讲座脚本使用说明" class="headerlink" title="splinter易班抢讲座脚本使用说明"></a>splinter易班抢讲座脚本使用说明</h4><h6 id="1-安装python"><a href="#1-安装python" class="headerlink" title="1. 安装python"></a>1. 安装python</h6><p>​    请自行百度教程进行安装，并添加系统环境变量</p>
-<h6 id="2-装谷歌浏览器"><a href="#2-装谷歌浏览器" class="headerlink" title="2. 装谷歌浏览器"></a>2. 装谷歌浏览器</h6><p>​    （默认火狐，我用的谷歌）</p>
-<p>​    百度搜chrome，下载安装</p>
+        <p>最近发现身边的朋友一直被<strong>易班抢讲座</strong>所困扰着，每次抢讲座总有一波1s内就填完一大堆信息的“大神”，于是突发奇想想自己写一个自动抢讲座的脚本。最后测试成功了，现在记录一下。</p>
+<p>先来看一下最终的效果：</p>
+<p><img src="https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/BlogPictures/ybPage.jpg" alt=""></p>
 <a id="more"></a>
 
-<h6 id="3-装谷歌浏览器驱动"><a href="#3-装谷歌浏览器驱动" class="headerlink" title="3. 装谷歌浏览器驱动"></a>3. 装谷歌浏览器驱动</h6><p>​    3.1下载驱动文件chromedriver</p>
-<p>​    3.2将驱动文件复制到谷歌浏览器的安装目录下</p>
+
+
+<p><img src="https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/BlogPictures/picShell.jpg" alt=""></p>
+<h5 id="环境or软件要求"><a href="#环境or软件要求" class="headerlink" title="环境or软件要求"></a>环境or软件要求</h5><ol>
+<li>Python3.7</li>
+<li>Splinter</li>
+<li>Chrome浏览器</li>
+</ol>
+<p>Splinter 是用 Python 开发的一个开源web自动化测试的工具集。 它可以帮你自动化浏览器的行为，比如浏览 URLs 并和页面进行交互。Splinter在Selenium上又封装了一层，使得接口更为简单。</p>
+<h6 id="1-安装Python"><a href="#1-安装Python" class="headerlink" title="1. 安装Python"></a>1. 安装Python</h6><p>​    到<a href="https://www.python.org/" target="_blank" rel="noopener">Python官网</a>下载安装Python，并加Python添加到系统环境变量中。添加完之后，打开cmd命令提示符窗口，输入python显示对应的版本号则成功。</p>
+<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582014385583.png" alt="1582014385583"></p>
+<h6 id="2-安装谷歌浏览器"><a href="#2-安装谷歌浏览器" class="headerlink" title="2. 安装谷歌浏览器"></a>2. 安装谷歌浏览器</h6><p>安装<a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank" rel="noopener">Google <em>Chrome</em> 浏览器</a></p>
+<h6 id="3-安装Chromedriver"><a href="#3-安装Chromedriver" class="headerlink" title="3. 安装Chromedriver"></a>3. 安装Chromedriver</h6><p>到<a href="https://sites.google.com/a/chromium.org/chromedriver/" target="_blank" rel="noopener">ChromeDriver首页-WebDriver for Chrome</a>下载对应操作系统的最新的chromedriver</p>
+<p>将驱动文件复制到谷歌浏览器的安装目录下，并将此目录添加到系统环境变量中</p>
 <p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571060299376.png" alt="1571060299376"></p>
-<p>​    3.3将谷歌浏览器安装目录添加到系统环境变量中</p>
-<p>​        <img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571920456899.png" alt="1571920456899"></p>
+<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571920456899.png" alt="1571920456899"></p>
 <img src="C:\Users\lzfdd\AppData\Roaming\Typora\typora-user-images\1571920481680.png" alt="1571920481680" style="zoom:200%;" />
 
 
 
-<h6 id="5-安装splinter模块"><a href="#5-安装splinter模块" class="headerlink" title="5. 安装splinter模块"></a>5. 安装splinter模块</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install splinter</span><br></pre></td></tr></table></figure>
+<h6 id="4-安装Splinter模块"><a href="#4-安装Splinter模块" class="headerlink" title="4. 安装Splinter模块"></a>4. 安装Splinter模块</h6><p>打开命令提示符窗口，输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install splinter</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">如安装失败请加镜像地址再安装</span></span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple splinter</span><br></pre></td></tr></table></figure>
 
-<p>如安装失败请加镜像 <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-<h6 id="6-运行脚本文件"><a href="#6-运行脚本文件" class="headerlink" title="6. 运行脚本文件"></a>6. 运行脚本文件</h6><p>讲座开始前直接双击脚本文件运行</p>
-<h6 id="7-注意事项"><a href="#7-注意事项" class="headerlink" title="7. 注意事项"></a>7. 注意事项</h6><p>1.每次讲座脚本修改下面三个位置，报名链接和时间</p>
-<p>2.验证码需要手动输入，所以至少要提前一分钟运行脚本登录易班</p>
-<p>3.运行脚本时浏览器窗口和命令窗口不要最小化</p>
+<p>关于Splinter的使用说明，可以查看官方文档。-&gt; <a href="https://splinter-docs-zh-cn.readthedocs.io/" target="_blank" rel="noopener">Splinter — Splinter 0.7.6 中文文档</a></p>
+<h5 id="脚本说明"><a href="#脚本说明" class="headerlink" title="脚本说明"></a>脚本说明</h5><h6 id="1-个人信息"><a href="#1-个人信息" class="headerlink" title="1. 个人信息"></a>1. 个人信息</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">lecture</span><span class="params">(object)</span>:</span></span><br><span class="line">	driver_name = <span class="string">'chrome'</span></span><br><span class="line">	browser = Browser(driver_name)</span><br><span class="line">	<span class="comment"># 易班账号</span></span><br><span class="line">	username = <span class="string">'**********'</span></span><br><span class="line">	password = <span class="string">'**********'</span></span><br><span class="line">	<span class="comment"># 讲座信息</span></span><br><span class="line">	<span class="comment"># go=后面加报名链接</span></span><br><span class="line">	login_url = <span class="string">'http://www.yiban.cn/login?go=https://q.yiban.cn/app/index/appid/***'</span></span><br><span class="line">	<span class="comment"># 报名链接</span></span><br><span class="line">	baoming_url = <span class="string">'https://q.yiban.cn/app/index/appid/***'</span></span><br><span class="line">	<span class="comment"># 报名时间</span></span><br><span class="line">	apply_time = <span class="string">'2019-10-25 19:00:00'</span></span><br><span class="line">	<span class="comment"># 个人信息</span></span><br><span class="line">	department = <span class="string">'学院'</span></span><br><span class="line">	myclass = <span class="string">'班级'</span></span><br><span class="line">	stu_number = <span class="string">'学号'</span></span><br><span class="line">	mobile_num = <span class="string">'手机号'</span></span><br><span class="line">	profession = <span class="string">'专业'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="2-用户登录"><a href="#2-用户登录" class="headerlink" title="2. 用户登录"></a>2. <strong>用户登录</strong></h6><p>这里本来打算用全自动的，但是后来发现自动识别的验证码错误率较高，以我目前的能力还没有办法解决，所以这里的验证码需要自己手动输入。最终抢讲座的时候脚本需要提前打开登录系统，到时间点会自动进行操作。</p>
+<p>查找元素</p>
+<ul>
+<li><p>visit(url)</p>
+<p>通过visit()打开url</p>
+</li>
+<li><p>find_by_xpath(‘ ‘)</p>
+<blockquote>
+<p>Splinter提供了6种方法用于查找在页面中的元素，并用于每个选择器类型： <code>css</code>, <code>xpath</code>, <code>tag</code>, <code>name</code>, <code>id</code>, <code>value</code>, <code>text</code>. </p>
+</blockquote>
+<p>这里使用xpath选择器定位账号和密码输入框，使用<code>click_link_by_id()</code>点击按钮</p>
+</li>
+<li><p>fill(‘ ‘) </p>
+<p>填充数据</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="comment"># browser = Browser(self.driver_name)</span></span><br><span class="line">		self.browser.visit(self.login_url)</span><br><span class="line">		self.browser.find_by_xpath(<span class="string">'//*[@id="account-txt"]'</span>).fill(self.username)</span><br><span class="line">		self.browser.find_by_xpath(<span class="string">'//*[@id="password-txt"]'</span>).fill(self.password)</span><br><span class="line">		self.browser.click_link_by_id(<span class="string">'login-btn'</span>)</span><br><span class="line">		print(<span class="string">u"请自行输入验证码登录...\n"</span>)</span><br><span class="line">        </span><br><span class="line">		<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">			<span class="keyword">if</span> self.browser.url != self.baoming_url:</span><br><span class="line">				time.sleep(<span class="number">1</span>)</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				print(<span class="string">'登录成功！\n'</span>)</span><br><span class="line">				<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582015384626.png" alt="1582015384626"></p>
+<h6 id="3-自动报名"><a href="#3-自动报名" class="headerlink" title="3. 自动报名"></a>3. 自动报名</h6><p>登录易班后，获取当前时间和报名开始时间，循环判断是否到报名的时间点。到点则退出循环，刷新页面，自动点击并填充数据进行报名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLecture</span><span class="params">(self)</span>:</span></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">    target_time = datetime.datetime.strptime(self.apply_time, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">    start_time = <span class="number">10</span></span><br><span class="line">    print(<span class="string">"离开始时间还有：\n"</span>)</span><br><span class="line">    <span class="keyword">while</span> start_time != <span class="number">0</span>:</span><br><span class="line">        now_time = datetime.datetime.now()</span><br><span class="line">        start_time = (target_time - now_time).seconds</span><br><span class="line">        print(start_time)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    self.browser.reload()</span><br><span class="line">    print(datetime.datetime.now())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        self.browser.click_link_by_text(<span class="string">'开始报名'</span>)</span><br><span class="line">        self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[1]/div[2]/textarea'</span>).fill(self.department)</span><br><span class="line">        link_text1 = self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[1]/div[4]/a'</span>).text</span><br><span class="line">        self.browser.click_link_by_text(link_text1)</span><br><span class="line"></span><br><span class="line">        self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[2]/div[2]/textarea'</span>).fill(self.myclass)</span><br><span class="line">        link_2 = self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[2]'</span>)</span><br><span class="line">        link_2.find_by_tag(<span class="string">'a'</span>).click()</span><br><span class="line"></span><br><span class="line">        self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[3]/div[2]/textarea'</span>).fill(self.stu_number)</span><br><span class="line">        link_3 = self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[3]'</span>)</span><br><span class="line">        link_3.find_by_tag(<span class="string">'a'</span>).click()</span><br><span class="line"></span><br><span class="line">        self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[4]/div[2]/textarea'</span>).fill(self.mobile_num)</span><br><span class="line">        link_4 = self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[4]'</span>)</span><br><span class="line">        link_4.find_by_tag(<span class="string">'a'</span>).click()</span><br><span class="line"></span><br><span class="line">        self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[5]/div[2]/textarea'</span>).fill(self.profession)</span><br><span class="line">        link_text5 = self.browser.find_by_xpath(<span class="string">'//*[@id="enroll-view"]/div[2]/ul/li[5]/div[4]/a'</span>).text</span><br><span class="line">        self.browser.click_link_by_text(link_text5)</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'报名成功！'</span>)</span><br><span class="line">     	...</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="4-运行脚本"><a href="#4-运行脚本" class="headerlink" title="4. 运行脚本"></a>4. 运行脚本</h6><p>讲座开始前直接双击脚本文件运行，<u><strong>运行前请注意更新相关的时间等信息</strong></u>。</p>
+<p>完整的代码已上传至<code>GitHub</code>上：<a href="https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/dataBackup/" target="_blank" rel="noopener">https://raw.githubusercontent.com/ChiufungLee/BlogBackup/master/dataBackup/</a></p>
+<h6 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5. 注意事项"></a>5. 注意事项</h6><ul>
+<li><p>每次讲座脚本修改下面三个位置，报名链接和时间</p>
+</li>
+<li><p>验证码需要手动输入，所以请提前1分钟运行脚本登录易班</p>
+</li>
+<li><p>运行脚本时浏览器窗口和命令窗口最好不要最小化</p>
+</li>
+</ul>
 <p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571986721699.png" alt="1571986721699"></p>
+<p><u>能力有限，欢迎大家提出建议 ~ _  ~</u></p>
 
       
 
@@ -218,17 +268,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -236,6 +275,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习笔记/Python//" class="article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
