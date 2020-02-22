@@ -19,7 +19,7 @@
     list-style: none;
   }
   .category-all-page .category-list-item-list-item {
-    margin: 10px 15px;
+    margin: 10px 25px;
   }
   .category-all-page .category-list-item-list-count {
     color: $grey;
