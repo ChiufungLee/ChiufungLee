@@ -270,93 +270,9 @@
 <blockquote>
 <p>（Asynchronous JavaScript and XML, 异步的JavaScript和XML）</p>
 </blockquote>
-<h5 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h5><p>XMLHttpRequest 是 AJAX 的基础，用于在后台与服务器交换数据。</p>
-<h6 id="创建XMLHttpRequest"><a href="#创建XMLHttpRequest" class="headerlink" title="创建XMLHttpRequest"></a>创建XMLHttpRequest</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)		<span class="comment">//判断浏览器是否支持XMLHttpRequest对象</span></span><br><span class="line">    &#123;</span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();		<span class="comment">//创建XMLHttpRequest对象</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">else</span>		<span class="comment">//IE5、6b不支持XMLHttpRequest对象，使用ActiveX对象</span></span><br><span class="line">    &#123;</span><br><span class="line">        xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="将请求发送到服务器"><a href="#将请求发送到服务器" class="headerlink" title="将请求发送到服务器"></a>将请求发送到服务器</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"test1.txt"</span>,<span class="literal">true</span>);	<span class="comment">//method,url,async</span></span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
-
-
-
-<table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">open(<em>method</em>,<em>url</em>,<em>async</em>)</td>
-<td align="left">规定请求的类型、URL 以及是否异步处理请求。<br />method<em>：请求的类型：GET 或 POST</em><br />url<em>：文件在服务器上的位置</em><br />async：true（异步）或 false（同步）</td>
-</tr>
-<tr>
-<td align="left">send(<em>string</em>)</td>
-<td align="left">将请求发送到服务器。<br /><em>string</em>：仅用于 POST 请求</td>
-</tr>
-</tbody></table>
-<h6 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h6><p>get：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlhttp.open(&quot;GET&quot;,&quot;demo_get.asp&quot;,true);</span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
-
-<p>post：如果需要像 HTML 表单那样 POST 数据，使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定想要发送的数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setRequestHeader(header,value)		<span class="comment">//向请求添加 HTTP 头。header: 规定头的名称，value: 规定头的值</span></span><br><span class="line"></span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"ajax_test.asp"</span>,<span class="literal">true</span>);</span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">xmlhttp.send(<span class="string">"fname=Bill&amp;lname=Gates"</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<h6 id="必须使用post情况"><a href="#必须使用post情况" class="headerlink" title="必须使用post情况"></a>必须使用post情况</h6><ol>
-<li>无法使用缓存文件（更新服务器上的文件或数据库）</li>
-<li>向服务器发送大量数据（POST 没有数据量限制）</li>
-<li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li>
-</ol>
-</blockquote>
-<h6 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h6><p>XMLHttpRequest 对象如果要用于 AJAX 的话，其 open() 方法的 async 参数必须设置为 true：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"ajax_test.asp"</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-
-<p>当 async = true 时，需要指定当服务器响应已做好被处理的准备时所执行的函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xmlhttp.readyState == <span class="number">4</span> &amp;&amp; xmlhttp.status == <span class="number">200</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"Mydiv"</span>).innerHTML=xmlhttp.responseText;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"test1.txt"</span>,<span class="literal">true</span>);</span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
-
-<h5 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h5><p>使用 XMLHttpRequest 对象的 responseText 或 responseXML 属性获取响应</p>
-<p>responseText：获得字符串类型的响应数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"mydiv"</span>).innerHTML=xmlhttp.responsetText;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>responseXML：获取XML类型的响应数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xmlDoc=xmlhttp.responseXML;</span><br><span class="line">txt=<span class="string">""</span>;</span><br><span class="line">x=xmlDoc.getElementsByTagName(<span class="string">"ARTIST"</span>);</span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;x.length;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  txt=txt + x[i].childNodes[<span class="number">0</span>].nodeValue + <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=txt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="onreadystatechange事件"><a href="#onreadystatechange事件" class="headerlink" title="onreadystatechange事件"></a>onreadystatechange事件</h5><p>每当readyState改变时，就会触发onreadystatechange事件</p>
-<p> XMLHttpRequest 对象的三个重要的属性：</p>
-<table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">onreadystatechange</td>
-<td align="left">存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。</td>
-</tr>
-<tr>
-<td align="left">readyState</td>
-<td align="left">存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。<br />0: 请求未初始化<br />1: 服务器连接已建立<br />2: 请求已接收<br />3: 请求处理中<br />4: 请求已完成，且响应已就绪</td>
-</tr>
-<tr>
-<td align="left">status</td>
-<td align="left">200: “OK”<br />404: 未找到页面</td>
-</tr>
-</tbody></table>
-<h4 id="页面跳转问题"><a href="#页面跳转问题" class="headerlink" title="页面跳转问题"></a>页面跳转问题</h4><ol>
-<li>form不能有action跳转</li>
-<li>a 不能有href跳转</li>
-</ol>
-<p>​          方法一：给form表单写一个onsubmit函数，在最后加一句：<strong>return false;</strong> 如果不加return false，提交页面时，整个页面会立马刷新，数据改变只是一闪而过；</p>
-<p>​          方法二：表单不用<input type="submit">的方式，改为设置一个button按钮，让用户通过手动点击按钮来实现数据更改。</p>
-<p>当使用ajax进行form表单提交时，只能提交text，radio等 [input] 对象的数据，对于文件流数据，serialize()并不起作用，需要用FormDada（）来提交，例如</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="keyword">new</span> FormData();		<span class="comment">//创建formdata对象，便于将文件传输到后端</span></span><br><span class="line">	data.append(<span class="string">"title"</span>,$(<span class="string">'#title'</span>).val());</span><br><span class="line">	data.append(<span class="string">"description"</span>,$(<span class="string">'#description'</span>).val());</span><br><span class="line"></span><br><span class="line">	data.append(<span class="string">"pic"</span>, <span class="built_in">document</span>.getElementById(<span class="string">"pic"</span>).files[<span class="number">0</span>]);	</span><br><span class="line">	<span class="comment">//在formdata对象中添加(封装)文件对象</span></span><br><span class="line"></span><br><span class="line">	data.append(<span class="string">"tourl"</span>,$(<span class="string">'#tourl'</span>).val())</span><br><span class="line">	data.append(<span class="string">"imgIndex"</span>,$(<span class="string">'#imgIndex'</span>).val());</span><br><span class="line"></span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		type :<span class="string">"POST"</span>,</span><br><span class="line">		url : <span class="string">'/banner/upload_handle/'</span>,</span><br><span class="line">		data: data,</span><br><span class="line">		processData:<span class="literal">false</span>,   <span class="comment">//设置不对数据进行自处理，默认jquery会对上传的数据进行处理</span></span><br><span class="line">		contentType:<span class="literal">false</span>,   <span class="comment">//设置不添加请求头的内容类型</span></span><br><span class="line">		dataType:<span class="string">"html"</span>,</span><br><span class="line">		global:<span class="literal">false</span>,</span><br><span class="line">		<span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">		success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">			$(<span class="string">".picList"</span>).empty();</span><br><span class="line">			$(<span class="string">".picList"</span>).html(data);</span><br><span class="line">			<span class="built_in">console</span>.log(data);</span><br><span class="line">		&#125;,</span><br><span class="line">		error:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">"获取数据失败！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2020/02/24/Ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
+        
       
 
       
