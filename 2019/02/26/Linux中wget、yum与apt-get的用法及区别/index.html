@@ -6,24 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.lizhaofeng.cn">
-  <title>德天跨国瀑布之行 | 我不安生</title>
+  <title>Linux中wget、yum与apt-get的用法及区别 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从南宁到德天搭了五个小时的大巴我居然没有吐这大概是我最坚强的一次德天的景色真的好好看随便一拍都可以很美很美我喜欢大阳幽谷里漫山丛花开遍的翠田花海，还有清澈见底绿的不像话的归春河坐竹排到瀑布底下水花飞溅到身上的感觉好刺激，隔壁越南游船上的小姐姐穿着很好看的衣服在拍照一路上都能看到从河对岸的越南划竹排过来吆喝着兜售香烟和咖啡的小贩，他们讲中文的调调还挺好听越南集市里一个穿着挺时髦的阿姨买了两双越南拖鞋">
+  <meta name="description" content="一般来说著名的linux系统基本上分两大类：  RedHat系列：Redhat、Centos、Fedora等 Debian系列：Debian、Ubuntu等  RedHat 系列 常见的安装包格式 rpm包,安装rpm包的命令是“rpm -参数” 包管理工具 yum 支持tar包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="德天跨国瀑布之行">
-<meta property="og:url" content="https://www.lizhaofeng.cn/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/index.html">
+<meta property="og:title" content="Linux中wget、yum与apt-get的用法及区别">
+<meta property="og:url" content="https://www.lizhaofeng.cn/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="我不安生">
-<meta property="og:description" content="从南宁到德天搭了五个小时的大巴我居然没有吐这大概是我最坚强的一次德天的景色真的好好看随便一拍都可以很美很美我喜欢大阳幽谷里漫山丛花开遍的翠田花海，还有清澈见底绿的不像话的归春河坐竹排到瀑布底下水花飞溅到身上的感觉好刺激，隔壁越南游船上的小姐姐穿着很好看的衣服在拍照一路上都能看到从河对岸的越南划竹排过来吆喝着兜售香烟和咖啡的小贩，他们讲中文的调调还挺好听越南集市里一个穿着挺时髦的阿姨买了两双越南拖鞋">
+<meta property="og:description" content="一般来说著名的linux系统基本上分两大类：  RedHat系列：Redhat、Centos、Fedora等 Debian系列：Debian、Ubuntu等  RedHat 系列 常见的安装包格式 rpm包,安装rpm包的命令是“rpm -参数” 包管理工具 yum 支持tar包">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A91.jpg">
-<meta property="og:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A92.jpg">
-<meta property="og:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A93.jpg">
-<meta property="og:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A94.jpg">
-<meta property="article:published_time" content="2018-04-22T15:27:23.000Z">
-<meta property="article:modified_time" content="2020-02-17T08:31:57.356Z">
+<meta property="article:published_time" content="2019-02-26T06:20:46.000Z">
+<meta property="article:modified_time" content="2020-02-26T06:31:32.886Z">
 <meta property="article:author" content="我不安生">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A91.jpg">
   
     <link rel="alternative" href="/atom.xml" title="我不安生" type="application/atom+xml">
   
@@ -168,33 +163,64 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-游记-德天跨国瀑布之行" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-Linux中wget、yum与apt-get的用法及区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      德天跨国瀑布之行
+      Linux中wget、yum与apt-get的用法及区别
     </h1>
   
 
         
-        <a href="/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/" class="archive-article-date">
-  	<time datetime="2018-04-22T15:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
+        <a href="/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2019-02-26T06:20:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从南宁到德天搭了五个小时的大巴我居然没有吐这大概是我最坚强的一次<br>德天的景色真的好好看随便一拍都可以很美很美<br>我喜欢大阳幽谷里漫山丛花开遍的翠田花海，还有清澈见底绿的不像话的归春河<br>坐竹排到瀑布底下水花飞溅到身上的感觉好刺激，隔壁越南游船上的小姐姐穿着很好看的衣服在拍照<br>一路上都能看到从河对岸的越南划竹排过来吆喝着兜售香烟和咖啡的小贩，他们讲中文的调调还挺好听<br>越南集市里一个穿着挺时髦的阿姨买了两双越南拖鞋让我觉得很不可思议<br>虽然是枯水期但还是好好玩啊</p>
-<p><img src="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A91.jpg" alt="德天跨国瀑布"></p>
+        <p>一般来说著名的linux系统基本上分两大类：</p>
+<ul>
+<li>RedHat系列：Redhat、Centos、Fedora等</li>
+<li>Debian系列：Debian、Ubuntu等</li>
+</ul>
+<h6 id="RedHat-系列"><a href="#RedHat-系列" class="headerlink" title="RedHat 系列"></a>RedHat 系列</h6><ol>
+<li>常见的安装包格式 rpm包,安装rpm包的命令是“rpm -参数”</li>
+<li>包管理工具 yum</li>
+<li>支持tar包</li>
+</ol>
 <a id="more"></a>
 
-<p><img src="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A92.jpg" alt="归春河，对面就是越南咯"></p>
-<p><img src="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A93.jpg" alt="来来往往兜售越南香烟和咖啡的小贩"></p>
-<p><img src="http://q5u20aot3.bkt.clouddn.com/%E5%BE%B7%E5%A4%A94.jpg" alt="大阳幽谷"></p>
+<p>yum可以用于运作rpm包，例如在Centos系统上对某个软件的管理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装：</span></span><br><span class="line">yum install</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载：</span></span><br><span class="line">yum remove</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新：</span></span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="Debian系列"><a href="#Debian系列" class="headerlink" title="Debian系列"></a>Debian系列</h6><ol>
+<li><p>常见的安装包格式 deb包,安装deb包的命令是“dpkg -参数”</p>
+</li>
+<li><p>包管理工具 apt-get</p>
+</li>
+<li><p>支持tar包</p>
+</li>
+</ol>
+<p>apt-get可以用于运作deb包，例如在Ubuntu系统上对某个软件的管理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装：</span></span><br><span class="line">apt-get install</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载：</span></span><br><span class="line">apt-get remove</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新：</span></span><br><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+
+
+
+<p>wget不是安装方式，它是一种下载工具，类似于迅雷。通过HTTP、HTTPS、FTP三个最常见的TCP/IP协议下载，并可以使用HTTP代理，名字是<code>World Wide Web</code>与<code>get</code>的结合。如果要下载一个软件,可以直接运行：<code>wget 下载地址</code>，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装Python</span></span><br><span class="line">wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz</span><br></pre></td></tr></table></figure>
+
+<p>如果当前ubuntu未安装wget，可按下列操作进行安装和检查是否安装成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line"></span><br><span class="line">sudo apt-get install wget</span><br><span class="line"></span><br><span class="line">wget --version</span><br></pre></td></tr></table></figure>
+
+
+<p>原文链接：<a href="https://blog.csdn.net/abcwoabcwo/article/details/80244989" target="_blank" rel="noopener">https://blog.csdn.net/abcwoabcwo/article/details/80244989</a></p>
 
       
 
@@ -209,11 +235,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔/游记//" class="article-tag-list-link color3">游记</a>
+        			<a href="/categories/学习笔记/Linux//" class="article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -231,15 +257,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/26/Python%E7%9A%84%E5%AE%89%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux中wget、yum与apt-get的用法及区别
+          Python的安装
         
       </div>
     </a>
   
+  
+    <a href="/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">德天跨国瀑布之行</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
