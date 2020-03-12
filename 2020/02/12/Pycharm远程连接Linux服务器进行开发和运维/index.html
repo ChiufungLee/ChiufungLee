@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.lizhaofeng.cn">
-  <title>Category: 学习笔记 | 我不安生</title>
+  <title>Pycharm远程连接Linux服务器进行开发和运维 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我不安生">
-<meta property="og:url" content="https://www.lizhaofeng.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/page/2/index.html">
+  <meta name="description" content="部署了Django项目，之前一直是本地修改，再上传到服务器，各种不爽和不方便！经过一番查询，发现pycharm可以远程连接。 配置方法：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pycharm远程连接Linux服务器进行开发和运维">
+<meta property="og:url" content="https://www.lizhaofeng.cn/2020/02/12/Pycharm%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E7%BB%B4/index.html">
 <meta property="og:site_name" content="我不安生">
+<meta property="og:description" content="部署了Django项目，之前一直是本地修改，再上传到服务器，各种不爽和不方便！经过一番查询，发现pycharm可以远程连接。 配置方法：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.chenxm.cc/upload/article/2019/3/8/114_20190308110447_625.png">
+<meta property="og:image" content="http://www.chenxm.cc/upload/article/2019/3/8/999_20190308110136_275.png">
+<meta property="og:image" content="http://www.chenxm.cc/upload/article/2019/3/8/122_20190308111855_756.png">
+<meta property="og:image" content="http://www.chenxm.cc/upload/article/2019/3/8/113_20190308110403_533.png">
+<meta property="og:image" content="http://www.chenxm.cc/upload/article/2019/3/8/112_20190308110327_182.png">
+<meta property="article:published_time" content="2020-02-12T05:56:46.000Z">
+<meta property="article:modified_time" content="2020-03-12T06:03:27.079Z">
 <meta property="article:author" content="我不安生">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.chenxm.cc/upload/article/2019/3/8/114_20190308110447_625.png">
   
     <link rel="alternative" href="/atom.xml" title="我不安生" type="application/atom+xml">
   
@@ -159,36 +169,77 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-Pycharm远程连接Linux服务器进行开发和运维" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/Python%E7%9A%84%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2019-02-26T06:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/Python%E7%9A%84%E5%AE%89%E8%A3%85/">Python的安装</a>
+    <h1 class="article-title" itemprop="name">
+      Pycharm远程连接Linux服务器进行开发和运维
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/02/12/Pycharm%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E7%BB%B4/" class="archive-article-date">
+  	<time datetime="2020-02-12T05:56:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>部署了Django项目，之前一直是本地修改，再上传到服务器，各种不爽和不方便！经过一番查询，发现pycharm可以远程连接。</p>
+<p><strong>配置方法：</strong></p>
+<a id="more"></a>
+
+<ol>
+<li><p>打开pycharm,windows下连接linux服务器如图所示：</p>
+<p>路径：tools→Deployment→Configuration</p>
+</li>
+</ol>
+<p><img src="http://www.chenxm.cc/upload/article/2019/3/8/114_20190308110447_625.png" alt="114.png"></p>
+<ol start="2">
+<li><p>配置连接名字，type选择<strong>sftp</strong>,只能选择<strong>sftp</strong></p>
+</li>
+<li><p>配置连接服务器基本信息sftp host、username、password，填写信息完成之后.</p>
+</li>
+<li><p>点击<strong>Test SFTP connection</strong></p>
+<p>然后点击<strong>Autodetect</strong></p>
+</li>
+</ol>
+<p><strong><img src="http://www.chenxm.cc/upload/article/2019/3/8/999_20190308110136_275.png" alt="999.png"></strong></p>
+<ol start="5">
+<li><p>点击Mappings—— 对接服务器代码存放路径和windows电脑代码存放路径。</p>
+<p>填写信息：Local path、Deployment path on server，</p>
+<p>然后点击<strong>ok</strong>按钮</p>
+</li>
+</ol>
+<p><a href="http://www.chenxm.cc/zb_users/upload/2018/08/201808201534762714104722.png" target="_blank" rel="noopener"><img src="http://www.chenxm.cc/upload/article/2019/3/8/122_20190308111855_756.png" alt="122.png"></a></p>
+<ol start="6">
+<li><p>设置如何使得本地代码和服务器代码同步更新，如图，</p>
+<p>路径：Tools→Deployment→Options</p>
+</li>
+</ol>
+<p><img src="http://www.chenxm.cc/upload/article/2019/3/8/113_20190308110403_533.png" alt="113.png"></p>
+<p>找到 Upload changed files automatically to the default server 这一行，选择On Explicit save action(Ctrl+S)</p>
+<p><img src="http://www.chenxm.cc/upload/article/2019/3/8/112_20190308110327_182.png" alt="112.png"></p>
+<p><strong>注意：</strong></p>
+<p>如果发现使用pycharm上传文件上传成功，但是linux上不存在，请检查第5步，服务器存放路径，</p>
+<ol>
+<li>检查上传文件路径是否正确</li>
+<li>路径：Tools→Deployment→Sync with Deployed to xx</li>
+</ol>
+<p>来源： <a href="http://www.chenxm.cc/article/628.html" target="_blank" rel="noopener">http://www.chenxm.cc/article/628.html</a> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -205,105 +256,94 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2019-02-26T06:20:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/24/Ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Ajax学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/23/Jquery%E5%AE%9E%E7%8E%B0HTML%E5%89%8D%E7%AB%AF%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%85%A8%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jquery实现前端点击展开全文</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/">Linux中wget、yum与apt-get的用法及区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/12/Python%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" class="archive-article-date">
-  	<time datetime="2019-02-12T05:18:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-12</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/12/Python%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">Python学习计划</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/Python//" class="article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">&amp;laquo; Prev</a><a class="page-number" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">1</a><span class="page-number current">2</span>
-    </nav>
+
+
   
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "AEXDLJKVaHAtWRlTr6XGfugs-gzGzoHsz",
+            app_key: "2LhKRakRVNGdlrF7IGQKGX6v",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
+</script>
+    </section>
+  
+
+
+  
+
+
 
 
           </div>
@@ -330,10 +370,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
