@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.lizhaofeng.cn">
-  <title>Archives: 2019/2 | 我不安生</title>
+  <title>Python爬虫之Requests库的使用 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我不安生">
-<meta property="og:url" content="https://www.lizhaofeng.cn/archives/2019/02/index.html">
+  <meta name="description" content="HTTP协议​    HTTP，Hypertext Transfer Protocol, 超文本传输协议，是一个基于“请求与响应”模式的、无状态的应用层（作用于TCP协议之上）协议。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫之Requests库的使用">
+<meta property="og:url" content="https://www.lizhaofeng.cn/2020/02/22/Requests%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="我不安生">
+<meta property="og:description" content="HTTP协议​    HTTP，Hypertext Transfer Protocol, 超文本传输协议，是一个基于“请求与响应”模式的、无状态的应用层（作用于TCP协议之上）协议。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584508422463.png">
+<meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584716704672.png">
+<meta property="og:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584721695183.png">
+<meta property="article:published_time" content="2020-02-22T10:02:05.000Z">
+<meta property="article:modified_time" content="2020-03-22T10:03:56.175Z">
 <meta property="article:author" content="我不安生">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584508422463.png">
   
     <link rel="alternative" href="/atom.xml" title="我不安生" type="application/atom+xml">
   
@@ -159,162 +167,183 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-Requests的使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python爬虫之Requests库的使用
+    </h1>
+  
+
+        
+        <a href="/2020/02/22/Requests%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-02-22T10:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4><p>​    HTTP，Hypertext Transfer Protocol, 超文本传输协议，是一个基于“请求与响应”模式的、无状态的应用层<em>（作用于TCP协议之上）</em>协议。</p>
+<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584508422463.png" alt="1584508422463"></p>
+<a id="more"></a>
+
+<h6 id="PATCH和PUT的区别"><a href="#PATCH和PUT的区别" class="headerlink" title="PATCH和PUT的区别"></a>PATCH和PUT的区别</h6><p>PATCH用于局部更新，而PUT提交时要将所有字段一并提交，未提交字段则被删除。使用PATCH可以节省网络带宽。</p>
+<p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584716704672.png" alt="1584716704672"></p>
+<h4 id="Requests库的使用"><a href="#Requests库的使用" class="headerlink" title="Requests库的使用"></a>Requests库的使用</h4><p>Requests是用python语言基于urllib编写的，采用的是Apache2 Licensed开源协议的HTTP库。</p>
+<h6 id="Requests库主要方法"><a href="#Requests库主要方法" class="headerlink" title="Requests库主要方法"></a>Requests库主要方法</h6><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">requests.request()</td>
+<td align="center">构造一个请求，支撑以下各方法的基础方法</td>
+</tr>
+<tr>
+<td align="center">requests.head()</td>
+<td align="center">获取HTML网页头信息的方法，对应于HTTP的HEAD</td>
+</tr>
+<tr>
+<td align="center">requests.get()</td>
+<td align="center">获取HTML网页的主要方法，对应HTTP的GET</td>
+</tr>
+<tr>
+<td align="center">requests.post()</td>
+<td align="center">向HTML网页提交POST请求的方法，对应于HTTP的POST</td>
+</tr>
+<tr>
+<td align="center">requests.put()</td>
+<td align="center">向HTML网页提交PUT请求的方法，对应于HTTP的PUT</td>
+</tr>
+<tr>
+<td align="center">requests.patch()</td>
+<td align="center">向HTML网页提交局部修改请求，对应于HTTP的PATCH</td>
+</tr>
+<tr>
+<td align="center">requests.delete()</td>
+<td align="center">向HTML页面提交删除请求，对应于HTTP的DELETE</td>
+</tr>
+</tbody></table>
+<h6 id="Response对象的属性"><a href="#Response对象的属性" class="headerlink" title="Response对象的属性"></a>Response对象的属性</h6><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">r.status_code</td>
+<td align="center">HTTP请求的返回状态，200表示连接成功，404表示失败</td>
+</tr>
+<tr>
+<td align="center">r.text</td>
+<td align="center">HTTP响应内容的字符串形式，即url对应的页面内容</td>
+</tr>
+<tr>
+<td align="center">r.encoding</td>
+<td align="center">从HTTP  header中猜测响应内容的编码方式</td>
+</tr>
+<tr>
+<td align="center">r.apparent_encoding</td>
+<td align="center">从内容中分析出响应内容的编码方式</td>
+</tr>
+<tr>
+<td align="center">r.content</td>
+<td align="center">HTTP响应内容的二进制形式</td>
+</tr>
+</tbody></table>
+<p>注意：若header中不存在charset，则r.encoding认为编码为ISO-8859-1。</p>
+<h6 id="Requests库的异常"><a href="#Requests库的异常" class="headerlink" title="Requests库的异常"></a>Requests库的异常</h6><table>
+<thead>
+<tr>
+<th align="center">异常</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">requests.ConnectionError</td>
+<td align="center">网络连接错误异常，如DNS查询失败、拒绝连接等</td>
+</tr>
+<tr>
+<td align="center">requests.HTTPError</td>
+<td align="center">HTTP错误异常</td>
+</tr>
+<tr>
+<td align="center">requests.URLRequired</td>
+<td align="center">URL缺失异常</td>
+</tr>
+<tr>
+<td align="center">requests.TooManyRedirects</td>
+<td align="center">超过最大重定向次数，产生重定向异常</td>
+</tr>
+<tr>
+<td align="center">requests.ConnectTimeout</td>
+<td align="center">连接远程服务器超时异常</td>
+</tr>
+<tr>
+<td align="center">requests.Timeout</td>
+<td align="center">请求URL超时，产生超时异常</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">r.raise_for_status</td>
+<td align="center">如果不是200，产生request.HTTPError</td>
+</tr>
+</tbody></table>
+<h6 id="Requests库方法介绍"><a href="#Requests库方法介绍" class="headerlink" title="Requests库方法介绍"></a>Requests库方法介绍</h6><h6 id="1、requests-request-method-url-kwargs"><a href="#1、requests-request-method-url-kwargs" class="headerlink" title="1、requests.request(method, url, **kwargs)"></a>1、requests.request(method, url, **kwargs)</h6><p>params: 字典或字节序列</p>
+<p>data: 字典、字节序列或文件对象，重点作为向服务器提交资源时使用</p>
+<p>json: JSON格式的数据</p>
+<p>headers:  字典，HTTP定制头</p>
+<p>cookies: 从HTTP协议解析cookie </p>
+<p>auth: 元组，支持HTTP认证功能</p>
+<p>files: 字典类型，向服务器传输文件</p>
+<p>timeout: 设定超时时间，秒为单位</p>
+<p><span style="color:red">proxies: 字典类型，设定访问代理服务器，可以增加登录认证（隐藏爬虫源地址，防止逆追踪）</span></p>
+<p>allow_redirects: True/False, 默认True，重定向开关</p>
+<p>stream: True/False, 默认True，获取内容立即下载开关</p>
+<p>verify: True/False, 默认True，认证SSL证书开关</p>
+<p>cert: 本地SSL证书路径</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># requests库爬取网页通用代码框架</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url, timeout=<span class="number">30</span>)</span><br><span class="line">    r.raise_for_status()</span><br><span class="line">    r.encoding = r.apparent_encoding</span><br><span class="line">    <span class="keyword">return</span> r.text</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"产生异常"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="网络爬虫的尺寸"><a href="#网络爬虫的尺寸" class="headerlink" title="网络爬虫的尺寸"></a>网络爬虫的尺寸</h6><p><img src="C:%5CUsers%5Clzfdd%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1584721695183.png" alt="1584721695183"></p>
+<p>网络爬虫的限制：</p>
+<ul>
+<li><p>来源审查：判断User-Agent进行限制</p>
+<p>检查来访HTTP协议头的User-Agent域，只响应浏览器或友好爬虫的访问</p>
+</li>
+<li><p>发布公告：Robots协议（网络爬虫排除标准）</p>
+<p>告知所有爬虫网站的爬取策略，要求爬虫遵守</p>
+<p>形式：在网站根目录下robots.txt文件</p>
+</li>
+</ul>
+<blockquote>
+<p>robots.txt是一种存放于网站根目录下的ASCII编码的文本文件，它通常告诉网络搜索引擎的漫游器（又称网络蜘蛛），此网站中的哪些内容是不应被搜索引擎的漫游器获取的，哪些是可以被漫游器获取的。</p>
+<p>因为一些系统中的URL是大小写敏感的，所以robots.txt的文件名应统一为小写。</p>
+<p>robots.txt应放置于网站的根目录下。</p>
+<p>如果想单独定义搜索引擎的漫游器访问子目录时的行为，那么可以将自定的设置合并到根目录下的robots.txt，或者使用robots元数据（Metadata，又称元数据）。</p>
+<p>robots.txt协议并不是一个规范，而只是约定俗成的，所以并不能保证网站的隐私。</p>
+<p>注意robots.txt是用字符串比较来确定是否获取URL，所以目录末尾有与没有斜杠“/”表示的是不同的URL。robots.txt允许使用类似”Disallow: *.gif”这样的通配符。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/28/Python%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-02-28T15:07:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/28/Python%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Python基础数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/Python//" class="article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/Python%E7%9A%84%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2019-02-26T06:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/Python%E7%9A%84%E5%AE%89%E8%A3%85/">Python的安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/Python//" class="article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2019-02-26T06:20:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/Linux%E4%B8%ADwget%E3%80%81yum%E4%B8%8Eapt-get%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/">Linux中wget、yum与apt-get的用法及区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/BeautifulSoup%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-02-22T09:58:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/BeautifulSoup%E7%9A%84%E4%BD%BF%E7%94%A8/">Python爬虫之BeautifulSoup库的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -335,59 +364,94 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/12/Python%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" class="archive-article-date">
-  	<time datetime="2019-02-12T05:18:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-12</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/24/Ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Ajax学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/21/%E4%BF%A1%E6%81%AF%E6%A0%87%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python爬虫之信息标记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/12/Python%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">Python学习计划</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/Python//" class="article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+
+
+  
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "AEXDLJKVaHAtWRlTr6XGfugs-gzGzoHsz",
+            app_key: "2LhKRakRVNGdlrF7IGQKGX6v",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
+</script>
+    </section>
+  
+
+
+  
+
+
 
 
           </div>
@@ -415,8 +479,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
