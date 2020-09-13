@@ -267,31 +267,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="if-name-‘main‘：的作用"><a href="#if-name-‘main‘：的作用" class="headerlink" title="if name == ‘main‘：的作用"></a><strong>if <strong>name</strong> == ‘<strong>main</strong>‘：的作用</strong></h3><p>一个python文件通常有两种使用方法，第一是作为脚本直接执行，第二是 import 到其他的 python 脚本中被调用（模块重用）执行。因此 if <strong>name</strong> == ‘main’: 的作用就是控制这两种情况执行代码的过程，在 if <strong>name</strong> == ‘main’: 下的代码只有在第一种情况下（即文件作为脚本直接执行）才会被执行，而 import 到其他脚本中是不会被执行的。举例说明如下：</p>
-<ul>
-<li>直接执行</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20190510141202522.png" alt="img"></p>
-<p><strong>直接执行 test.py，</strong>结果如下图，可以成功 print 两行字符串。即<strong>，if <strong>name</strong>==”<strong>main</strong>“：语句之前和之后的代码都被执行。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20190510141303114.png" alt="img"></p>
-<ul>
-<li>import 执行</li>
-</ul>
-<p>然后在同一文件夹新建名称为 import_test.py 的脚本，输入如下代码：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190510141602268.png" alt="img"></p>
-<p>执行 <strong>import_test.py 脚本</strong>，输出结果如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190510141624918.png" alt="img"></p>
-<p>只输出了第一行字符串。即，<strong>if <strong>name</strong>==”<strong>main</strong>“：之前的语句被执行，之后的没有被执行。</strong></p>
-<h3 id="if-name-‘main‘：的运行原理"><a href="#if-name-‘main‘：的运行原理" class="headerlink" title="if name == ‘main‘：的运行原理"></a>if <strong>name</strong> == ‘<strong>main</strong>‘：的运行原理</h3><p><strong>每个python模块</strong>（python文件，也就是此处的 test.py 和 import_test.py）都包含<strong>内置的变量 <strong>name</strong></strong>，当该模块被<strong>直接执行</strong>的时候，<strong><strong>name</strong> 等于文件名（包含后缀 .py ）</strong>；如果该模块 <strong>import</strong> 到其他模块中，<strong>则该模块的 <strong>name</strong> 等于模块名称（不包含后缀.py）。</strong></p>
-<p>而 <strong>“<strong>main</strong>” 始终指当前执行模块的名称（包含后缀.py）</strong>。进而当模块被<strong>直接执行</strong>时<strong>，<strong>name</strong> == ‘main’ 结果为真。</strong></p>
-<p>为了进一步说明，我们在 test.py 脚本的 if <strong>name</strong>==”<strong>main</strong>“: 之前<strong>加入 print(<strong>name</strong>)，</strong>即将 <strong>name</strong> 打印出来。文件内容和结果如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190510142230219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlcWlhbmc1MjU=,size_16,color_FFFFFF,t_70" alt="img"></p>
-<p><img src="https://img-blog.csdnimg.cn/20190510142253482.png" alt="img"></p>
-<p>可以看出，此时变量<strong><strong>name</strong>的值为”<strong>main</strong>“。</strong></p>
-<p>再执行 import_test.py，执行结果如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190510142441889.png" alt="img"></p>
-<p><img src="https://img-blog.csdnimg.cn/20190510142452571.png" alt="img"></p>
-<p>此时，<strong>test.py中的<strong>name</strong>变量值为 test，</strong>不满足 <strong>name</strong>==”<strong>main</strong>“ 的条件，因此，无法执行其后的代码。</p>
-
+        
+          <a class="article-more-a" href="/2020/06/13/Python%E4%B8%ADif-name-main-%EF%BC%9A%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E5%8E%9F%E7%90%86/#more">more >></a>
+        
       
 
       
