@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://www.lizhaofeng.cn">
   <title>Python读写Excel文件 | 我不安生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用xlsxwriter包写入Excel文件xlsxwriter这个模块，它生成的文件后缀名为.xlsx，最大能够支持1048576行数据，16384列数据 5.2、用法 12#引用包import xlsxwriter    5.2.2、创建工作簿 12workbook &#x3D; xlsxwriter.Workbook(&#39;demo1.xlsx&#39;)#创建一个excel文件    5.2.3、创建sheet">
+  <meta name="description" content="用xlsxwriter包写入Excel文件xlsxwriter这个模块，它生成的文件后缀名为.xlsx，最大能够支持1048576行数据，16384列数据 1.1用法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python读写Excel文件">
 <meta property="og:url" content="https://www.lizhaofeng.cn/2020/05/07/Python%E8%AF%BB%E5%86%99Excel%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="我不安生">
-<meta property="og:description" content="用xlsxwriter包写入Excel文件xlsxwriter这个模块，它生成的文件后缀名为.xlsx，最大能够支持1048576行数据，16384列数据 5.2、用法 12#引用包import xlsxwriter    5.2.2、创建工作簿 12workbook &#x3D; xlsxwriter.Workbook(&#39;demo1.xlsx&#39;)#创建一个excel文件    5.2.3、创建sheet">
+<meta property="og:description" content="用xlsxwriter包写入Excel文件xlsxwriter这个模块，它生成的文件后缀名为.xlsx，最大能够支持1048576行数据，16384列数据 1.1用法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-07T05:50:48.000Z">
-<meta property="article:modified_time" content="2020-06-07T05:56:12.350Z">
+<meta property="article:modified_time" content="2020-12-27T07:52:21.835Z">
 <meta property="article:author" content="我不安生">
 <meta name="twitter:card" content="summary">
   
@@ -183,33 +183,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="用xlsxwriter包写入Excel文件"><a href="#用xlsxwriter包写入Excel文件" class="headerlink" title="用xlsxwriter包写入Excel文件"></a>用xlsxwriter包写入Excel文件</h1><p>xlsxwriter这个模块，它生成的文件后缀名为.xlsx，最大能够支持1048576行数据，16384列数据</p>
-<p>5.2、用法</p>
+        <h5 id="用xlsxwriter包写入Excel文件"><a href="#用xlsxwriter包写入Excel文件" class="headerlink" title="用xlsxwriter包写入Excel文件"></a>用xlsxwriter包写入Excel文件</h5><p>xlsxwriter这个模块，它生成的文件后缀名为.xlsx，最大能够支持1048576行数据，16384列数据</p>
+<p>1.1用法</p>
+<a id="more"></a>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#引用包</span></span><br><span class="line"><span class="keyword">import</span> xlsxwriter</span><br></pre></td></tr></table></figure>
 
 
 
-<p>5.2.2、创建工作簿</p>
+<p>1.2、创建工作簿</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">workbook = xlsxwriter.Workbook(<span class="string">'demo1.xlsx'</span>)</span><br><span class="line"><span class="comment">#创建一个excel文件</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>5.2.3、创建sheet</p>
+<p>1.3、创建sheet</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">worksheet = workbook.add_worksheet(<span class="string">u'sheet1'</span>)</span><br><span class="line"><span class="comment">#在文件中创建一个名为TEST的sheet,不加名字默认为sheet1</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>5.2.4、设置每个单元格里面的值</p>
+<p>1.4、设置每个单元格里面的值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">worksheet.write(<span class="number">3</span>,<span class="number">0</span>,<span class="number">35.5</span>)</span><br><span class="line">   <span class="comment">#第4行的第1列设置值为35.5</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>5.2.5、关闭工作簿</p>
+<p>1.5、关闭工作簿</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workbook.close()</span><br></pre></td></tr></table></figure>
 
 
 
-<p>5.3、源码示例</p>
+<p>1.6、源码示例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlsxwriter</span><br><span class="line"><span class="comment">#写Excel</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_excel</span><span class="params">()</span>:</span> </span><br><span class="line">	workbook = xlsxwriter.Workbook(<span class="string">'chat.xlsx'</span>)<span class="comment">#创建一个excel文件</span></span><br><span class="line">	worksheet = workbook.add_worksheet(<span class="string">u'sheet1'</span>)<span class="comment">#在文件中创建一个名为TEST的sheet,不加名字默认为sheet1</span></span><br><span class="line"></span><br><span class="line">	worksheet.set_column(<span class="string">'A:A'</span>,<span class="number">20</span>)<span class="comment">#设置第一列宽度为20像素</span></span><br><span class="line">    bold= workbook.add_format(&#123;<span class="string">'bold'</span>:<span class="literal">True</span>&#125;)<span class="comment">#设置一个加粗的格式对象</span></span><br><span class="line">    worksheet.write(<span class="string">'A1'</span>,<span class="string">'HELLO'</span>)<span class="comment">#在A1单元格写上HELLO</span></span><br><span class="line">    worksheet.write(<span class="string">'A2'</span>,<span class="string">'WORLD'</span>,bold)<span class="comment">#在A2上写上WORLD,并且设置为加粗</span></span><br><span class="line">    worksheet.write(<span class="string">'B2'</span>,U<span class="string">'中文测试'</span>,bold)<span class="comment">#在B2上写上中文加粗</span></span><br><span class="line"></span><br><span class="line">    worksheet.write(<span class="number">2</span>,<span class="number">0</span>,<span class="number">32</span>)<span class="comment">#使用行列的方式写上数字32,35,5</span></span><br><span class="line">    worksheet.write(<span class="number">3</span>,<span class="number">0</span>,<span class="number">35.5</span>)<span class="comment">#使用行列的时候第一行起始为0,所以2,0代表着第三行的第一列,等价于A4</span></span><br><span class="line">    worksheet.write(<span class="number">4</span>,<span class="number">0</span>,<span class="string">'=SUM(A3:A4)'</span>)<span class="comment">#写上excel公式</span></span><br><span class="line">    workbook.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 写入Excel</span></span><br><span class="line">    write_excel();</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'写入成功'</span>)</span><br></pre></td></tr></table></figure>
 
 
