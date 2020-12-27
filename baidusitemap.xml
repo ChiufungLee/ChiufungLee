@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lizhaofeng.cn/2020/03/31/Scrapy%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2020-12-27</lastmod>
+  </url>  <url>
     <loc>https://www.lizhaofeng.cn/2020/06/13/Python%E4%B8%ADif-name-main-%EF%BC%9A%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2020-09-13</lastmod>
   </url>  <url>
@@ -12,9 +15,6 @@
   </url>  <url>
     <loc>https://www.lizhaofeng.cn/2020/04/21/Vue%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2020-04-21</lastmod>
-  </url>  <url>
-    <loc>https://www.lizhaofeng.cn/2020/03/31/Scrapy%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2020-04-05</lastmod>
   </url>  <url>
     <loc>https://www.lizhaofeng.cn/2020/02/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2020-03-28</lastmod>
