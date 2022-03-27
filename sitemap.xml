@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lizhaofeng.cn/photos/data.json</loc>
+    
+    <lastmod>2022-03-27T03:07:41.682Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lizhaofeng.cn/about/index.html</loc>
     
     <lastmod>2022-03-27T02:03:52.990Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>https://www.lizhaofeng.cn/categories/index.html</loc>
     
     <lastmod>2020-02-15T07:11:53.044Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lizhaofeng.cn/photos/data.json</loc>
-    
-    <lastmod>2020-02-14T05:24:01.639Z</lastmod>
     
   </url>
   
