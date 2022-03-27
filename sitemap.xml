@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lizhaofeng.cn/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/</loc>
+    
+    <lastmod>2022-03-27T03:56:21.282Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lizhaofeng.cn/photos/data.json</loc>
     
-    <lastmod>2022-03-27T03:07:41.682Z</lastmod>
+    <lastmod>2022-03-27T03:46:19.155Z</lastmod>
     
   </url>
   
@@ -166,13 +173,6 @@
     <loc>https://www.lizhaofeng.cn/2019/10/14/Django%E7%9A%84CBV%E5%92%8CFBV%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2020-02-18T12:31:43.998Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lizhaofeng.cn/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/</loc>
-    
-    <lastmod>2020-02-17T08:31:57.356Z</lastmod>
     
   </url>
   
