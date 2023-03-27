@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lizhaofeng.cn/2019/10/18/%E5%9F%BA%E4%BA%8EPython%E8%AF%AD%E8%A8%80Django%E6%A1%86%E6%9E%B6%E7%9A%84%E7%BE%8E%E9%A3%9F%E7%BD%91%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2023-03-27</lastmod>
+  </url>  <url>
     <loc>https://www.lizhaofeng.cn/2018/04/22/%E6%B8%B8%E8%AE%B0-%E5%BE%B7%E5%A4%A9%E8%B7%A8%E5%9B%BD%E7%80%91%E5%B8%83%E4%B9%8B%E8%A1%8C/</loc>
     <lastmod>2022-03-27</lastmod>
   </url>  <url>
@@ -57,9 +60,6 @@
   </url>  <url>
     <loc>https://www.lizhaofeng.cn/2019/10/23/%E5%9F%BA%E4%BA%8EPython%E4%B8%8BSplinter%E7%9A%84%E6%98%93%E7%8F%AD%E8%87%AA%E5%8A%A8%E6%8A%A2%E8%AE%B2%E5%BA%A7%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>https://www.lizhaofeng.cn/2019/10/18/%E5%9F%BA%E4%BA%8EPython%E8%AF%AD%E8%A8%80Django%E6%A1%86%E6%9E%B6%E7%9A%84%E7%BE%8E%E9%A3%9F%E7%BD%91%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2020-02-18</lastmod>
   </url>  <url>
     <loc>https://www.lizhaofeng.cn/2019/07/21/%E8%94%A1%E5%BA%B7%E6%B0%B8%E7%9A%84%E6%83%85%E5%95%86%E8%AF%BE/</loc>
     <lastmod>2020-02-18</lastmod>
